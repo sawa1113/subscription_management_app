@@ -1,0 +1,27 @@
+
+-----------------------------------------------------------------
+  pg_upgrade run on Sat Feb 22 22:50:58 2025
+-----------------------------------------------------------------
+
+could not open version file "/usr/local/var/postgres_new/PG_VERSION": No such file or directory
+
+-----------------------------------------------------------------
+  pg_upgrade run on Sat Feb 22 22:52:04 2025
+-----------------------------------------------------------------
+
+Performing Consistency Checks
+-----------------------------
+Checking cluster versions                                   ok
+Checking database user is the install user                  ok
+Checking database connection settings                       ok
+Checking for prepared transactions                          ok
+Checking for system-defined composite types in user tables  ok
+Checking for reg* data types in user tables                 ok
+Checking for contrib/isn with bigint-passing mismatch       ok
+Checking for user-defined encoding conversions              ok
+Checking for user-defined postfix operators                 ok
+Checking for incompatible polymorphic functions             ok
+Creating dump of global objects                             ok
+Creating dump of database schemas
+                                                            ok
+lc_collate values for database "postgres" do not match:  old "C", new "ja_JP.UTF-8"

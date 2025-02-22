@@ -1,0 +1,47 @@
+
+-----------------------------------------------------------------
+  pg_upgrade run on Sat Feb 22 22:50:58 2025
+-----------------------------------------------------------------
+
+
+-----------------------------------------------------------------
+  pg_upgrade run on Sat Feb 22 22:52:04 2025
+-----------------------------------------------------------------
+
+command: "/usr/local/opt/postgresql@12/bin/pg_ctl" -w -l "pg_upgrade_server.log" -D "/usr/local/var/postgres" -o "-p 50432 -b  -c listen_addresses='' -c unix_socket_permissions=0700 -c unix_socket_directories='/Users/sawada-pc/workspace/Rails_App/subscription_app'" start >> "pg_upgrade_server.log" 2>&1
+waiting for server to start....2025-02-22 22:52:04.579 JST [66772] LOG:  starting PostgreSQL 12.22 on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.4), 64-bit
+2025-02-22 22:52:04.580 JST [66772] LOG:  listening on Unix socket "/Users/sawada-pc/workspace/Rails_App/subscription_app/.s.PGSQL.50432"
+2025-02-22 22:52:04.593 JST [66773] LOG:  database system was shut down at 2020-05-30 12:52:50 JST
+2025-02-22 22:52:04.599 JST [66772] LOG:  database system is ready to accept connections
+ done
+server started
+
+
+command: "/usr/local/opt/postgresql@12/bin/pg_ctl" -w -D "/usr/local/var/postgres" -o "" -m smart stop >> "pg_upgrade_server.log" 2>&1
+waiting for server to shut down...2025-02-22 22:52:05.248 JST [66772] LOG:  received smart shutdown request
+.2025-02-22 22:52:05.250 JST [66772] LOG:  background worker "logical replication launcher" (PID 66778) exited with exit code 1
+2025-02-22 22:52:05.250 JST [66774] LOG:  shutting down
+2025-02-22 22:52:05.261 JST [66772] LOG:  database system is shut down
+ done
+server stopped
+
+
+command: "/usr/local/opt/postgresql@14/bin/pg_ctl" -w -l "pg_upgrade_server.log" -D "/usr/local/var/postgres_new" -o "-p 50432 -b -c synchronous_commit=off -c fsync=off -c full_page_writes=off -c vacuum_defer_cleanup_age=0  -c listen_addresses='' -c unix_socket_permissions=0700 -c unix_socket_directories='/Users/sawada-pc/workspace/Rails_App/subscription_app'" start >> "pg_upgrade_server.log" 2>&1
+waiting for server to start....2025-02-22 22:52:05.410 JST [66822] LOG:  starting PostgreSQL 14.16 (Homebrew) on x86_64-apple-darwin23.6.0, compiled by Apple clang version 16.0.0 (clang-1600.0.26.6), 64-bit
+2025-02-22 22:52:05.411 JST [66822] LOG:  listening on Unix socket "/Users/sawada-pc/workspace/Rails_App/subscription_app/.s.PGSQL.50432"
+2025-02-22 22:52:05.416 JST [66823] LOG:  database system was shut down at 2025-02-22 22:51:56 JST
+2025-02-22 22:52:05.419 JST [66822] LOG:  database system is ready to accept connections
+ done
+server started
+
+
+command: "/usr/local/opt/postgresql@14/bin/pg_ctl" -w -D "/usr/local/var/postgres_new" -o "" -m fast stop >> "pg_upgrade_server.log" 2>&1
+waiting for server to shut down....2025-02-22 22:52:05.528 JST [66822] LOG:  received fast shutdown request
+2025-02-22 22:52:05.528 JST [66822] LOG:  aborting any active transactions
+2025-02-22 22:52:05.530 JST [66822] LOG:  background worker "logical replication launcher" (PID 66828) exited with exit code 1
+2025-02-22 22:52:05.530 JST [66824] LOG:  shutting down
+2025-02-22 22:52:05.538 JST [66822] LOG:  database system is shut down
+ done
+server stopped
+
+

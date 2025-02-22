@@ -1,0 +1,13 @@
+
+-----------------------------------------------------------------
+  pg_upgrade run on Sat Feb 22 22:50:58 2025
+-----------------------------------------------------------------
+
+
+-----------------------------------------------------------------
+  pg_upgrade run on Sat Feb 22 22:52:04 2025
+-----------------------------------------------------------------
+
+command: "/usr/local/opt/postgresql@14/bin/pg_dumpall" --host /Users/sawada-pc/workspace/Rails_App/subscription_app --port 50432 --username sawada-pc --globals-only --quote-all-identifiers --binary-upgrade  -f pg_upgrade_dump_globals.sql >> "pg_upgrade_utility.log" 2>&1
+
+
